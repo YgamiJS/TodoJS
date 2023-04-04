@@ -39,7 +39,7 @@ body {
 
   &__form {
     display: flex;
-    margin: 50px 0;
+    margin: 10px 0 50px 0;
     width: 100%;
     &__input {
       font-family: "Jost", sans-serif;
@@ -77,22 +77,6 @@ body {
       word-break: break-all;
       background-color: $white;
 
-      .complited::after {
-        content: "\2713";
-        display: none;
-      }
-
-      .complited:checked {
-        background-color: $graphit;
-        color: $white;
-      }
-
-      .complited:checked::after {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       .complited {
         background-color: $brown;
         border-radius: 3px;
@@ -100,6 +84,27 @@ body {
         width: 20px;
         height: 20px;
         cursor: pointer;
+        transition: all 300ms ease;
+        &::after {
+          content: "\2713";
+          color: $green;
+          display: none;
+        }
+
+        &:hover {
+          background: $browdown;
+        }
+
+        &:checked {
+          background-color: $graphit;
+          color: $white;
+        }
+
+        &:checked::after {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       .delete {
@@ -108,6 +113,10 @@ body {
         outline: none;
         font-size: 1.5rem;
         cursor: pointer;
+        transition: all 300ms ease;
+        &:hover {
+          color: $red;
+        }
       }
     }
   }
